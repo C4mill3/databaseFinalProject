@@ -1,6 +1,28 @@
 # databaseFinalProject
 This is the practical part of the final project.
+
 ## Table of Contents 
+- [Structure](#structure)
+  - [Tables](#tables)
+  - [Entity Relationship](#entity-relationship)
+- [Documentation](#documentation)
+- [The SQL Queries](#the-sql-queries)
+  - [Table Creation](#table-creation)
+  - [Data Insertion](#data-insertion)
+  - [Queries](#queries)
+    - [1. Retrieve All Sellers with Ratings Above 4](#1-retrieve-all-sellers-with-ratings-above-4)
+    - [2. Find All Products in the "Video Game" Category](#2-find-all-products-in-the-video-game-category)
+    - [3. Get All Orders for a Specific Customer](#3-get-all-orders-for-a-specific-customer)
+    - [4. Find Deliveries with a Status of "Shipping"](#4-find-deliveries-with-a-status-of-shipping)
+    - [5. Retrieve Order Details Including Product Information](#5-retrieve-order-details-including-product-information)
+    - [6. Get Total Cost of Each Order](#6-get-total-cost-of-each-order)
+    - [7. List All Payments Made by Customers](#7-list-all-payments-made-by-customers)
+    - [8. Get Average Rating of Deliverers](#8-get-average-rating-of-deliverers)
+    - [9. Find All Products with a Price Greater Than $50](#9-find-all-products-with-a-price-greater-than-50)
+    - [10. Retrieve All Customers with Total Orders and Amount Spent](#10-retrieve-all-customers-with-total-orders-and-amount-spent)
+    - [11. Query to Find the Most Sold Product](#query-to-find-the-most-sold-product)
+- [License](#license)
+
 
 # Structure
 ![schema - Structure of the Database](schema.png)
@@ -19,7 +41,7 @@ The database consists of 8 tables with differents relationship.
 - **Payment**: Stores payments made for orders.
 - **Order_Items**: Links products with orders and stores the quantity of each product.
 
-## Entity Relationship:
+## Entity Relationship
 
 - **Customers and Orders** have a one-to-many (1:N) relationship.
 - **Sellers and Products** have a one-to-many (1:N) relationship.
@@ -377,7 +399,7 @@ ORDER BY total_orders DESC;
 </details>
 
 
-### Query to Find the Most Sold Product
+### 11. Query to Find the Most Sold Product
 ```sql
 SELECT p."id", p."title", SUM(oi."quantity") AS total_sold
 FROM "Product" p
